@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Literasi Data: Minat Baca Siswa</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f9; color: #333; }
+    header { background: #4a90e2; color: white; text-align: center; padding: 20px; }
+    nav { background: #357ABD; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .container { width: 90%; max-width: 1000px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h2 { color: #357ABD; }
+    .chart { text-align: center; margin: 30px 0; }
+    footer { background: #4a90e2; color: white; text-align: center; padding: 15px; margin-top: 30px; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Webblog Literasi Data</h1>
+    <p>Mengubah Data Menjadi Informasi yang Bermakna</p>
+  </header>
+
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#artikel">Artikel</a>
+    <a href="#infografis">Infografis</a>
+    <a href="#rekomendasi">Rekomendasi</a>
+  </nav>
+
+  <div class="container" id="beranda">
+    <h2>Selamat Datang</h2>
+    <p>Website ini dibuat untuk menunjukkan bagaimana data sederhana bisa diubah menjadi informasi yang berguna dan bermanfaat, khususnya dalam meningkatkan minat baca siswa.</p>
+  </div>
+
+  <div class="container" id="artikel">
+    <h2>Artikel: Tren Minat Baca Siswa</h2>
+    <p>Berdasarkan data perpustakaan, jumlah siswa yang membaca buku terus meningkat dari bulan Januari hingga Maret. Hal ini menunjukkan adanya peningkatan kesadaran literasi di kalangan siswa.</p>
+    <ul>
+      <li>Januari: 30 siswa</li>
+      <li>Februari: 45 siswa</li>
+      <li>Maret: 60 siswa</li>
+    </ul>
+    <p>Interpretasi: Terjadi <b>kenaikan minat baca</b> sebesar 100% dari Januari ke Maret. Program literasi sekolah terbukti memberikan dampak positif.</p>
+  </div>
+
+  <div class="container" id="infografis">
+    <h2>Infografis</h2>
+    <div class="chart">
+      <canvas id="readingChart"></canvas>
+    </div>
+  </div>
+
+  <div class="container" id="rekomendasi">
+    <h2>Rekomendasi</h2>
+    <p>Untuk menjaga tren positif ini, sekolah dapat melakukan langkah berikut:</p>
+    <ol>
+      <li>Menambah koleksi buku baru setiap bulan.</li>
+      <li>Mengadakan program membaca bersama secara rutin.</li>
+      <li>Memberikan penghargaan bagi siswa dengan minat baca tinggi.</li>
+    </ol>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Literasi Data - Semua Hak Dilindungi</p>
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('readingChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Januari', 'Februari', 'Maret'],
+        datasets: [{
+          label: 'Jumlah Siswa Membaca',
+          data: [30, 45, 60],
+          backgroundColor: ['#4a90e2', '#50e3c2', '#f5a623']
+        }]
+      },
+      options: { responsive: true, plugins: { legend: { display: false } } }
+    });
+  </script>
+</body>
+</html>
